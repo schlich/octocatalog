@@ -7,7 +7,8 @@
     },
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers-contrib/features/poetry:2": {},
-    "ghcr.io/devcontainers-contrib/features/pre-commit:2": {}
+    "ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
   },
   // "forwardPorts": [],
   "postCreateCommand": "poetry install && pre-commit install && poetry run dbt deps && task bi",
@@ -29,6 +30,15 @@
       ],
       "settings": {
         "python.defaultInterpreterPath": ".venv/bin/python"
+      }
+    },
+    "codespaces": {
+      "repositories": {
+        "wustl-data/dbt-demo": {
+          "permissions": {
+            "contents": "write"
+          }
+        }
       }
     }
   }
